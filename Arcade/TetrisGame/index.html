@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="../neon.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="game-container">
         <div class="game-info">
@@ -31,14 +33,14 @@
                     </div>
                 </div>
             </div>
-            
-            <canvas id="gameCanvas"></canvas>
-            
-            <div class="panel right-panel">
-                <div class="next-piece">
-                    <h3 class="neon neon-blue">NEXT</h3>
-                    <canvas id="nextCanvas"></canvas>
-                </div>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+
+        <div class="panel right-panel">
+            <div class="next-piece">
+                <h3 class="neon neon-blue">NEXT</h3>
+                <canvas id="nextCanvas"></canvas>
             </div>
         </div>
 
@@ -47,7 +49,7 @@
         </div>
 
         <div id="gameOverMessage" class="end-message neon neon-red">GAME OVER</div>
-        
+
         <div class="controls">
             <button id="startBtn" class="neon neon-green">Iniciar Juego</button>
             <button id="restartBtn" class="neon neon-red" hidden>Jugar de nuevo</button>
@@ -63,4 +65,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
