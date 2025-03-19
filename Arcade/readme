@@ -1,0 +1,31 @@
+<!-- filepath: /Users/familiahuizarcastro/Documents/Practicas/Arcade/README.md -->
+# 🎮 Arcade Neón
+
+Una colección de juegos clásicos recreados con un estilo neón moderno.
+
+## 🚀 Características
+
+- Diseño neón retro-futurista
+- Juegos clásicos reimaginados
+- Efectos visuales y sonoros
+- Diseño responsive
+- Sistema de puntuación
+- Controles intuitivos
+
+## 🎯 Juegos Incluidos
+
+- 🐦 Flappy Bird - Evita los obstáculos
+- 🧱 Arkanoid - Rompe los bloques
+- 🦆 Duck Hunt - Apunta y dispara
+- 📦 Tetris - Organiza las piezas
+- 🌀 Laberinto 3D - Encuentra la salida
+
+## 🛠️ Tecnologías
+
+- HTML5
+- CSS3 con variables y efectos neón
+- JavaScript vanilla
+- Canvas API
+- Local Storage para puntuaciones
+
+## 📦 Estructura del Proyecto

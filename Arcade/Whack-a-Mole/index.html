@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack-a-Mole</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../neon.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1 class="neon neon-blue">Whack-a-Mole</h1>
+            <div class="score-panel">
+                <span class="neon neon-green">Puntuación: <span id="score">0</span></span>
+                <span class="neon neon-yellow">Nivel: <span id="level">1</span></span>
+                <span class="neon neon-pink">Tiempo: <span id="timer">30</span>s</span>
+            </div>
+        </div>
+
+        <div class="game-grid">
+            <div class="hole"><div class="mole"></div></div>
+            <div class="hole"><div class="mole"></div></div>
+            <div class="hole"><div class="mole"></div></div>
+            <div class="hole"><div class="mole"></div></div>
+            <div class="hole"><div class="mole"></div></div>
+            <div class="hole"><div class="mole"></div></div>
+            <div class="hole"><div class="mole"></div></div>
+            <div class="hole"><div class="mole"></div></div>
+            <div class="hole"><div class="mole"></div></div>
+        </div>
+
+        <div id="gameOverMessage" class="game-over neon neon-red">¡TIEMPO!</div>
+        
+        <div class="controls">
+            <button id="startBtn" class="neon neon-green">¡Comenzar!</button>
+            <button id="restartBtn" class="neon neon-blue" hidden>Jugar de nuevo</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Orbitron:wght@400..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,200" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="neon.css" />
+    <link rel="stylesheet" href="game.css" />
+    <link rel="stylesheet" href="nav-bar.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="loading.css">
+    <title>ARCADE</title>
+</head>
+
+<body>
+    <div class="music-player">
+        <audio id="bgMusic" loop>
+            <source src="assets/music/background.mp3" type="audio/mp3">
+        </audio>
+        <button id="musicToggle" class="music-toggle neon neon-blue">
+            <span class="material-symbols-outlined">music_note</span>
+        </button>
+    </div>
+
+    <header class="navbar">
+        <div class="logo neon neon-blue">ARCADE</div>
+        <button class="nav-toggle" aria-label="Abrir menú">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav-links">
+                <li><a href="#" class="neon neon-pink">Juegos</a></li>
+                <li><a href="#" class="neon neon-green">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>  
+
+
+    <main class="games-container">
+        <!-- Flappy Bird -->
+        <article class="game-card">
+            <img src="assets/images/flappy-bird.png" alt="Flappy Bird" class="game-image">
+            <div class="game-content">
+                <h2 class="game-title neon neon-green">Flappy Bird</h2>
+                <p class="game-description">Guía al pájaro a través de los tubos. ¡Cuidado con los obstáculos!</p>
+                <a href="FlappyBirdGame/index.html" class="play-button neon neon-blue">Jugar</a>
+            </div>
+        </article>
+
+        <!-- Arkanoid -->
+        <article class="game-card">
+            <img src="assets/images/arkanoid.png" alt="Arkanoid" class="game-image">
+            <div class="game-content">
+                <h2 class="game-title neon neon-pink">Arkanoid</h2>
+                <p class="game-description">Rompe todos los bloques con la pelota y la paleta en este clásico juego.</p>
+                <a href="Arkanoid/index.html" class="play-button neon neon-blue">Jugar</a>
+            </div>
+        </article>
+
+        <!-- Duck Hunt -->
+        <article class="game-card">
+            <img src="assets/images/duck-hunt.png" alt="Duck Hunt" class="game-image">
+            <div class="game-content">
+                <h2 class="game-title neon neon-orange">Duck Hunt</h2>
+                <p class="game-description">Apunta y dispara a los patos. ¡Demuestra tu puntería!</p>
+                <a href="DuckHuntGame/index.html" class="play-button neon neon-blue">Jugar</a>
+            </div>
+        </article>
+
+        <!-- Tetris -->
+        <article class="game-card">
+            <img src="assets/images/tetris.png" alt="Tetris" class="game-image">
+            <div class="game-content">
+                <h2 class="game-title neon neon-yellow">Tetris</h2>
+                <p class="game-description">Organiza las piezas que caen y completa líneas en este adictivo puzzle.</p>
+                <a href="TetrisGame/index.html" class="play-button neon neon-blue">Jugar</a>
+            </div>
+        </article>
+
+        <!-- Laberinto 3D -->
+        <article class="game-card">
+            <img src="assets/images/maze3d.png" alt="Laberinto 3D" class="game-image">
+            <div class="game-content">
+                <h2 class="game-title neon neon-purple">Laberinto 3D</h2>
+                <p class="game-description">Encuentra la salida en este laberinto tridimensional neón.</p>
+                <a href="Laberinto3Dgame/index.html" class="play-button neon neon-blue">Jugar</a>
+            </div>
+        </article>
+
+        <!-- Whack a Mole -->
+        <article class="game-card">
+            <img src="assets/images/whack-a-mole.png" alt="Whack a Mole" class="game-image">
+            <div class="game-content">
+                <h2 class="game-title neon neon-green">Whack a Mole</h2>
+                <p class="game-description">¡Golpea a los topos que aparecen! Sé rápido y preciso para conseguir la máxima puntuación.</p>
+                <a href="WhackAMole/index.html" class="play-button neon neon-blue">Jugar</a>
+            </div>
+        </article>
+    </main>
+        <script src="script.js"></script>
+        <script src="audio.js"></script>
+        <script src="arcade.js"></script>
+</body>
+</html>

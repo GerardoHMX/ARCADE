@@ -1,0 +1,125 @@
+body {
+    background: var(--bg-purple);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.game-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+    border: 2px solid var(--neon-blue);
+}
+
+.game-info {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#gameCanvas {
+    width: 300px;
+    height: 600px;
+    border: 2px solid var(--neon-blue);
+    background: #000;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+#holdCanvas, #nextCanvas {
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--neon-blue);
+    background: #000;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.score-panel > div {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hold-piece, .next-piece {
+    text-align: center;
+}
+
+.keyboard-info {
+    margin-top: 1rem;
+    font-size: 0.7em;
+    text-align: center;
+}
+
+.keyboard-info p {
+    margin: 0.5rem 0;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+button {
+    background: transparent;
+    border: 2px solid;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    animation: glitchEffect 0.3s infinite;
+}
+
+.end-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.end-message.visible {
+    opacity: 1;
+    animation: gameOverGlitch 0.3s infinite;
+}
+
+@keyframes gameOverGlitch {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    25% { transform: translate(-51%, -49%) scale(1.1); }
+    50% { transform: translate(-49%, -51%) scale(0.9); }
+    75% { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Agregar indicador visual del límite de altura */
+.height-limit-indicator {
+    position: absolute;
+    left: 0;
+    top: calc(4 * 30px); /* 4 filas desde arriba */
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 0, 0, 0.3);
+    box-shadow: 0 0 10px #ff0000;
+    pointer-events: none;
+}

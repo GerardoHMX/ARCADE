@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Maze 3D</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../neon.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="score-panel">
+            <span class="neon neon-blue">Nivel: <span id="level">1</span></span>
+            <span class="neon neon-green">Tiempo: <span id="timer">00:00</span></span>
+        </div>
+        
+        <div id="maze"></div>
+        <div id="player"></div>
+        
+        <div id="gameOverMessage" class="end-message neon neon-red">GAME OVER</div>
+        <div id="victoryMessage" class="end-message neon neon-green">¡VICTORIA!</div>
+        
+        <div class="controls">
+            <button id="startBtn" class="neon neon-green">Iniciar Juego</button>
+            <button id="restartBtn" class="neon neon-red" hidden>Jugar de nuevo</button>
+        </div>
+
+        <div class="mobile-controls">
+            <button id="upBtn">↑</button>
+            <div class="horizontal-controls">
+                <button id="leftBtn">←</button>
+                <button id="rightBtn">→</button>
+            </div>
+            <button id="downBtn">↓</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Pong</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../neon.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="score-panel">
+            <span class="neon neon-blue">Jugador: <span id="playerScore">0</span></span>
+            <span class="neon neon-red">CPU: <span id="cpuScore">0</span></span>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div id="gameOverMessage" class="end-message game-over neon neon-red">GAME OVER</div>
+        <div id="victoryMessage" class="end-message victory neon neon-green">VICTORY!</div>
+        <div class="controls">
+            <button id="startBtn" class="neon neon-green">Iniciar Juego</button>
+            <button id="restartBtn" class="neon neon-red" hidden>Reiniciar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

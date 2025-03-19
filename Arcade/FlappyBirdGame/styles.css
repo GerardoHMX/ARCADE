@@ -1,0 +1,138 @@
+body {
+    background: var(--bg-purple);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    padding: 1rem;
+}
+
+.game-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+    border: 2px solid var(--neon-blue);
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#gameCanvas {
+    width: 300px;
+    height: 450px;
+    border: 2px solid var(--neon-blue);
+    background: #000;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.score-panel {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.score-panel span {
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+}
+
+.controls {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+button {
+    background: transparent;
+    border: 2px solid;
+    padding: 0.5rem 1rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    animation: glitchEffect 0.3s infinite;
+}
+
+.game-over, .start-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    text-align: center;
+    width: 90%;
+    transition: opacity 0.3s;
+}
+
+.game-over.visible {
+    opacity: 1;
+    animation: gameOverGlitch 0.3s infinite;
+}
+
+.start-message.visible {
+    opacity: 1;
+    animation: blinkMessage 1s infinite;
+}
+
+/* Animaciones mejoradas */
+@keyframes gameOverGlitch {
+    0% { transform: translate(-50%, -50%) scale(1); filter: hue-rotate(0deg); }
+    25% { transform: translate(-51%, -49%) scale(1.1); filter: hue-rotate(90deg); }
+    50% { transform: translate(-49%, -51%) scale(0.9); filter: hue-rotate(180deg); }
+    75% { transform: translate(-50%, -50%) scale(1.1); filter: hue-rotate(270deg); }
+    100% { transform: translate(-50%, -50%) scale(1); filter: hue-rotate(360deg); }
+}
+
+@keyframes blinkMessage {
+    0%, 100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.95); }
+}
+
+/* Media queries */
+@media (max-width: 480px) {
+    .game-container {
+        padding: 1rem;
+    }
+
+    .score-panel {
+        font-size: 0.7rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media (min-height: 600px) {
+    #gameCanvas {
+        width: 250px;
+        height: 375px;
+    }
+
+    .score-panel {
+        font-size: 0.7rem;
+    }
+
+    button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.6rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .game-container {
+        padding: 2rem;
+    }
+}

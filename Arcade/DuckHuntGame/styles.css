@@ -1,0 +1,132 @@
+body {
+    background: var(--bg-purple);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    cursor: none;
+}
+
+.game-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+    border: 2px solid var(--neon-blue);
+    position: relative;
+}
+
+#gameCanvas {
+    width: 800px;
+    height: 600px;
+    border: 2px solid var(--neon-blue);
+    background: #000033;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.score-panel {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.crosshair {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    border: 2px solid var(--neon-red);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px var(--neon-red);
+}
+
+.crosshair::before,
+.crosshair::after {
+    content: '';
+    position: absolute;
+    background: var(--neon-red);
+    box-shadow: 0 0 5px var(--neon-red);
+}
+
+.crosshair::before {
+    width: 2px;
+    height: 16px;
+    top: 2px;
+    left: 9px;
+}
+
+.crosshair::after {
+    width: 16px;
+    height: 2px;
+    top: 9px;
+    left: 2px;
+}
+
+.end-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.end-message.visible {
+    opacity: 1;
+}
+
+#gameOverMessage.visible {
+    animation: gameOverGlitch 0.3s infinite;
+}
+
+#victoryMessage.visible {
+    animation: victoryPulse 0.5s infinite;
+}
+
+button {
+    background: transparent;
+    border: 2px solid;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    animation: glitchEffect 0.3s infinite;
+}
+
+@keyframes gameOverGlitch {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    25% { transform: translate(-51%, -49%) scale(1.1); }
+    50% { transform: translate(-49%, -51%) scale(0.9); }
+    75% { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes victoryPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        text-shadow: 0 0 10px var(--neon-green);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        text-shadow: 0 0 20px var(--neon-green);
+    }
+}

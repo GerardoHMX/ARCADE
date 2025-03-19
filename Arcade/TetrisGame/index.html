@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Tetris</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../neon.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-info">
+            <div class="panel left-panel">
+                <div class="hold-piece">
+                    <h3 class="neon neon-blue">HOLD</h3>
+                    <canvas id="holdCanvas"></canvas>
+                </div>
+                <div class="score-panel">
+                    <div class="score neon neon-green">
+                        <span>SCORE</span>
+                        <span id="score">0</span>
+                    </div>
+                    <div class="lines neon neon-pink">
+                        <span>LINES</span>
+                        <span id="lines">0</span>
+                    </div>
+                    <div class="level neon neon-yellow">
+                        <span>LEVEL</span>
+                        <span id="level">1</span>
+                    </div>
+                </div>
+            </div>
+            
+            <canvas id="gameCanvas"></canvas>
+            
+            <div class="panel right-panel">
+                <div class="next-piece">
+                    <h3 class="neon neon-blue">NEXT</h3>
+                    <canvas id="nextCanvas"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div id="maze">
+            <div class="height-limit-indicator"></div>
+        </div>
+
+        <div id="gameOverMessage" class="end-message neon neon-red">GAME OVER</div>
+        
+        <div class="controls">
+            <button id="startBtn" class="neon neon-green">Iniciar Juego</button>
+            <button id="restartBtn" class="neon neon-red" hidden>Jugar de nuevo</button>
+        </div>
+
+        <div class="keyboard-info neon neon-blue">
+            <p>← → : Mover</p>
+            <p>↑ : Rotar</p>
+            <p>↓ : Bajar rápido</p>
+            <p>Espacio : Caída instantánea</p>
+            <p>C : Hold/Guardar pieza</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

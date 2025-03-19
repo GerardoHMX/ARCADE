@@ -1,0 +1,17 @@
+.games-container {
+    padding-top: var(--navbar-height);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.game-card {
+    composes: neon-card;
+}
+
+.play-button {
+    composes: neon-button;
+}

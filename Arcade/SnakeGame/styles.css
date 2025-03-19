@@ -1,0 +1,122 @@
+body {
+    background: var(--bg-purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.game-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+    border: 2px solid var(--neon-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#gameCanvas {
+    border: 2px solid var(--neon-blue);
+    background: #000;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.score-panel {
+    font-size: 1.2em;
+    color: var(--neon-blue);
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+}
+
+button {
+    background: transparent;
+    border: 2px solid;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    animation: glitchEffect 0.3s infinite;
+}
+
+/* Game Over overlay */
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    text-shadow: 0 0 10px var(--neon-red),
+                 0 0 20px var(--neon-red),
+                 0 0 30px var(--neon-red);
+}
+
+.game-over.visible {
+    opacity: 1;
+    animation: gameOverGlitch 0.3s infinite;
+}
+
+@keyframes glitchEffect {
+    0% {
+        transform: translate(0);
+        text-shadow: inherit;
+    }
+    20% {
+        transform: translate(-2px, 2px);
+        text-shadow: 2px 2px var(--neon-blue);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+        text-shadow: -2px -2px var(--neon-pink);
+    }
+    60% {
+        transform: translate(2px, 2px);
+        text-shadow: 2px -2px var(--neon-green);
+    }
+    80% {
+        transform: translate(2px, -2px);
+        text-shadow: -2px 2px var(--neon-purple);
+    }
+    100% {
+        transform: translate(0);
+        text-shadow: inherit;
+    }
+}
+
+@keyframes gameOverGlitch {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    25% {
+        transform: translate(-51%, -49%) scale(1.02);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(-49%, -51%) scale(0.98);
+        opacity: 1;
+    }
+    75% {
+        transform: translate(-50%, -50%) scale(1.02);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}

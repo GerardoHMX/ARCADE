@@ -1,0 +1,45 @@
+ticas/Arcade/loading.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="loading.css">
+    <link rel="stylesheet" href="neon.css">
+    <title>Arcade Loading</title>
+</head>
+
+<body>
+    <div class="loading-screen">
+        <div class="insert-coin neon neon-yellow">INSERT COIN</div>
+        <a href="arcade.html" class="press-start neon neon-blue">PRESS START</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pressStart = document.querySelector('.press-start');
+            let coinInserted = false;
+
+            // Insertar moneda (Space)
+            document.addEventListener('keypress', (e) => {
+                if (e.code === 'Space' && !coinInserted) {
+                    coinInserted = true;
+                    pressStart.style.opacity = '1';
+                    pressStart.style.cursor = 'pointer';
+                    pressStart.classList.add('clickable');
+                }
+            });
+
+            // Enter para ir al arcade
+            document.addEventListener('keypress', (e) => {
+                if (e.code === 'Enter' && coinInserted) {
+                    window.location.href = 'arcade.html';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../neon.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="score-panel">
+            <span class="neon neon-blue">Intentos: <span id="moves">0</span></span>
+            <span class="neon neon-green">Pares: <span id="matches">0</span>/8</span>
+            <span class="neon neon-pink">Tiempo: <span id="timer">00:00</span></span>
+        </div>
+        
+        <div class="memory-grid"></div>
+        
+        <div id="gameOverMessage" class="game-over neon neon-green">¡VICTORIA!</div>
+        
+        <div class="controls">
+            <button id="startBtn" class="neon neon-blue">Iniciar Juego</button>
+            <button id="restartBtn" class="neon neon-red" hidden>Reiniciar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
