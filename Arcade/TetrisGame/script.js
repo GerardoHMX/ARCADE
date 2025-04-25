@@ -71,7 +71,7 @@ class Tetris {
     this.offscreenCanvas.height = this.gameCanvas.height;
     this.offscreenCtx = this.offscreenCanvas.getContext('2d');
 
-    this.heightLimit = 4; // Límite de altura para game over (4 filas desde arriba)
+    this.heightLimit = 8; // Límite de altura para game over (4 filas desde arriba)
   }
 
   // Tetromino definitions
